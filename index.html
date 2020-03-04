@@ -1,28 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>convertCurrency</title>
 </head>
+
 <body>
-<h1> Currency Converter </h1>
-    <p> Select Input currency</p> 
-<input type="number" id="amount"> amount </input>
-<input id="currency"> From </input>
-<input id="to"> To </input>
+    <section>
+        <p> CURRENCY CONVERTER </p>
+        <input type="number" id="amount"> amount </input>
+        <div>
+            <label >FROM:</label>
+            <select id="fromCurrencyList" name="currency" id="currency-select">
+                <option value="">--Please choose an option--</option>
+                <option value="USD">USD</option>
+                <option value="AUD">AUD</option>
+                <option value="CAD">CAD</option>
+                <option value="EUR">EUR</option>
+                <option value="HKD">HKD</option>
+                <option value="KRW">KRW</option>
+                <option value="VND">VND</option>
+            </select>
+        </div>
+        <div>
+            <label>TO:</label>
+            <select id="toCurrencyList">
+                <option name="To" value="">--Please choose an option--</option>
+                <option  name="To" value="USD">USD</option>
+                <option name="To" value="AUD">AUD</option>
+                <option  name="To" value="CAD">CAD</option>
+                <option  name="To" value="EUR">EUR</option>
+                <option name="To" value="HKD">HKD</option>
+                <option name="To" value="KRW">KRW</option>
+                <option name="To" value="VND">VND</option>
 
-<button id="convertButton"> 
-    Convert!
-</button>
+            </select>
+        </div>
+        <button id="convertButton"> 
+            Convert!
+        </button>
+        <div id="resultArea"> Result will be here </div>
 
-<div id="resultArea"> Result will be here </div>
-
-
-
-
+    </section>
 
     <script src="js/main.js"> </script>
 </body>
+
 </html>

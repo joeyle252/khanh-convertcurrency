@@ -2,41 +2,73 @@ let exchangeRate = 23000;
 
 let currency = document.getElementById('currency');
 let amountInput = document.getElementById('amount');
+let convertButton = document.getElementById('convertButton');
 let resultArea = document.getElementById('resultArea');
 
-function usdToVnd() {
-    let amount = amountInput.value;
-    let result = (amount * exchangeRate);
-    result = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'VND' }).format(result);
-    resultArea.innerHTML = `this is the result ${result}`;
-};
-function vndToUsd () {
-    let amount = amountInput.value;
-    let result = (amount / exchangeRate);
-    result = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'VND' }).format(result);
-    resultArea.innerHTML = `this is the result ${result}`;
-};
+convertButton.addEventListener("click",usdToVnd);
 
-function convertCurrency () {
-    console.log(currency.value.toLowerCase()) ;
-    if (currency.value.toLowerCase() ==="vnd"){
-    vndToUsd ();
-    } else if (currency.value.toLowerCase() ==="usd") {
-    usdToVnd();
-    } 
-    else{
-        alert ("please choose VND or USd");
+const currencyRatio = {
+    vnd: {
+      usd: 0.000043,
+      krw: 0.051,
+      eur: 0.000039,
+      vnd: 1
+    },
+    usd: {
+      usd: 1,
+      krw: 1193.27,
+      eur: 0.9,
+      vnd: 23235.5
+    },
+    krw: {
+      usd: 0.00084,
+      krw: 1,
+      eur: 0.00075,
+      vnd: 19.47
     }
+  };
+
+function usdToVnd() {
+    let from = document.getElementById('fromCurrencyList').value;
+    let to = document.getElementById('toCurrencyList').value;
+    // let to = document.querySelector('input[name="To"]:checked').value;
+    let currency = currencyRatio[from.toLowerCase()][to.toLowerCase()];
+    let amount = amountInput.value;
+    let result = amount * currency;
+    resultArea.innerHTML = `this is the result ${result}`;
+    
+
+    
 };
 
 
-convertButton.addEventListener("click",convertCurrency);
+// function vndToUsd () {
+//     let amount = amountInput.value;
+//     let result = (amount / exchangeRate);
+//     result = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'VND' }).format(result);
+//     resultArea.innerHTML = `this is the result ${result}`;
+// };
 
-// let amount = amountInput.value;
+// function convertCurrency () {
+//     console.log(currency.value.toLowerCase()) ;
+//     if (currency.value.toLowerCase() ==="vnd"){
+//     vndToUsd ();
+//     } else if (currency.value.toLowerCase() ==="usd") {
+//     usdToVnd();
+//     } 
+//     else{
+//         alert ("please choose VND or USd");
+//     }
+// };
 
-// let currencyInput = document.getElementById('currency');
 
-// let convertButton = document.getElementById('convertButton');
+// convertButton.addEventListener("click",convertCurrency);
+
+// // let amount = amountInput.value;
+
+// // let currencyInput = document.getElementById('currency');
+
+// // 
 
 // function vndToUsd () {
 //     let result = amount / vndUsd;
@@ -70,7 +102,7 @@ convertButton.addEventListener("click",convertCurrency);
 //     let vndAmount = document.write("50 USD is VND");
 // }
 
-// convertButton.addEventListener("click",usdToVnd);
+// 
 
 // convertButton.addEventListener("mouseover",mouseoverFunction)
 
