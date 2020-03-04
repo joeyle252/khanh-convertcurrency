@@ -13,7 +13,7 @@
         <p> CURRENCY CONVERTER </p>
         <input type="number" id="amount"> amount </input>
         <div>
-            <label >FROM:</label>
+            <label>FROM:</label>
             <select id="fromCurrencyList" name="currency" id="currency-select">
                 <option value="">--Please choose an option--</option>
                 <option value="USD">USD</option>
@@ -27,19 +27,17 @@
         </div>
         <div>
             <label>TO:</label>
-            <select id="toCurrencyList">
-                <option name="To" value="">--Please choose an option--</option>
-                <option  name="To" value="USD">USD</option>
-                <option name="To" value="AUD">AUD</option>
-                <option  name="To" value="CAD">CAD</option>
-                <option  name="To" value="EUR">EUR</option>
-                <option name="To" value="HKD">HKD</option>
-                <option name="To" value="KRW">KRW</option>
-                <option name="To" value="VND">VND</option>
+                <input type="radio" name="To" value="USD">USD</input>
+                <input type="radio" name="To" value="AUD">AUD</input>
+                <input type="radio" name="To" value="CAD">CAD</input>
+                <input type="radio" name="To" value="EUR">EUR</input>
+                <input type="radio" name="To" value="HKD">HKD</input>
+                <input type="radio" name="To" value="KRW">KRW</input>
+                <input type="radio" name="To" value="VND">VND</input>
 
             </select>
         </div>
-        <button id="convertButton"> 
+        <button id="convertButton">
             Convert!
         </button>
         <div id="resultArea"> Result will be here </div>
