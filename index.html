@@ -5,16 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
     <title>convertCurrency</title>
 </head>
 
 <body>
-    <section>
-        <p> CURRENCY CONVERTER </p>
-        <input type="number" id="amount"> amount </input>
-        <div>
+    <section class="container">
+        <h1> CURRENCY CONVERTER </h1>
+        <p> Amount </p>
+        <input type="number" id="amount"> </input>
+        <br>
+        <div class="from">
             <label>FROM:</label>
-            <select id="fromCurrencyList" name="currency" id="currency-select">
+            <select id="fromCurrencyList" name="currency">
                 <option value="">--Please choose an option--</option>
                 <option value="USD">USD</option>
                 <option value="AUD">AUD</option>
@@ -25,8 +28,9 @@
                 <option value="VND">VND</option>
             </select>
         </div>
-        <div>
-            <label>TO:</label>
+        <br>
+        <div class="to">
+                <label>TO:</label>
                 <input type="radio" name="To" value="USD">USD</input>
                 <input type="radio" name="To" value="AUD">AUD</input>
                 <input type="radio" name="To" value="CAD">CAD</input>
@@ -35,11 +39,12 @@
                 <input type="radio" name="To" value="KRW">KRW</input>
                 <input type="radio" name="To" value="VND">VND</input>
 
-            </select>
         </div>
+        <br>
         <button id="convertButton">
             Convert!
         </button>
+        <br>
         <div id="resultArea"> Result will be here </div>
 
     </section>

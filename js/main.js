@@ -4,6 +4,9 @@ let currency = document.getElementById('currency');
 let amountInput = document.getElementById('amount');
 let convertButton = document.getElementById('convertButton');
 let resultArea = document.getElementById('resultArea');
+function formatCurrency(type, value) {
+  return new Intl.NumberFormat('en-US', { style: 'currency', currency: type }).format(value)
+}
 
 convertButton.addEventListener("click",usdToVnd);
 
@@ -32,6 +35,35 @@ const currencyRatio = {
       hkd: 0.0066,
       vnd: 19.63,
       krw: 1,
+    },
+    eur: {
+      aud: 1.69,
+      cad: 1.5,
+      hkd: 8.69,
+      vnd: 25947.23,
+      krw: 1328.71,
+      usd: 1.12,
+    },
+    hkd: {
+      aud: 0.19,
+      cad: 0.17,
+      vnd: 2985.34,
+      krw: 152.89,
+      usd: 0.13,
+    },
+    cad: {
+      aud: 1.13,
+      hkd: 5.80,
+      vnd: 17310.61,
+      krw: 886.50,
+      usd: 0.75,
+    },
+    aud: {
+      cad: 0.88,
+      hkd: 5.13,
+      vnd: 15307.74,
+      krw: 784.28,
+      usd: 0.66,
     }
   };
   
@@ -42,12 +74,16 @@ function usdToVnd() {
     let amount = amountInput.value;
     let result = amount * currency;
     result = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'VND' }).format(result);
-    resultArea.innerHTML = `this is the result ${result}`;
+    resultArea.innerHTML = `This is the result ${formatCurrency(toCurrency,convertedAmount)}`;
     
 };
 
+function reverse() {
+  const [from, to] = getFromTo();
 
-
+  document.getElementById("from").value = to;
+  document.getElementById("to").value = from;
+}
 
 
 

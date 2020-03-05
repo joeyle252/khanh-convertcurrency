@@ -1,22 +1,25 @@
-label,
-footer {
-    font-family: sans-serif;
+section {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    width: 70%;
+    margin-left: 15%;
 }
-
-label {
-    font-size: 1rem;
-    padding-right: 10px;
+section > h1 {
+    font-size: 25px;
 }
-
-select {
-    font-size: .9rem;
-    padding: 2px 5px;
+section > p {
+    font-size: 20px;
 }
-
-footer {
-    font-size: .8rem;
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
+.from {
+    display: flex;
+    justify-content: space-around;
 }
-
+.to {
+    display: flex;
+    justify-content: space-around;
+}
