@@ -64,6 +64,7 @@ const currencyRatio = {
       vnd: 15307.74,
       krw: 784.28,
       usd: 0.66,
+      eur: 0.1
     }
   };
   
@@ -73,8 +74,8 @@ function usdToVnd() {
     let currency = currencyRatio[from.toLowerCase()][to.toLowerCase()];
     let amount = amountInput.value;
     let result = amount * currency;
-    result = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'VND' }).format(result);
-    resultArea.innerHTML = `This is the result ${formatCurrency(toCurrency,convertedAmount)}`;
+    result = new Intl.NumberFormat('en-US', { style: 'currency', currency: to }).format(result);
+    resultArea.innerHTML = `This is the result ${result}`;
     
 };
 
